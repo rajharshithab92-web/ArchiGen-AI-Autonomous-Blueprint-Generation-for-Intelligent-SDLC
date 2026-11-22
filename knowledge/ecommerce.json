@@ -1,0 +1,499 @@
+
+{
+  "domain": "ecommerce",
+  "layers": [
+    {
+      "id": "presentation",
+      "name": "Presentation Layer",
+      "description": "Provides the user interface through which customers interact with the application."
+    },
+    {
+      "id": "application",
+      "name": "Application Layer",
+      "description": "Handles business logic and application services."
+    },
+    {
+      "id": "api",
+      "name": "API/Integration Layer",
+      "description": "Manages communication between application services and external systems."
+    },
+    {
+      "id": "security",
+      "name": "Security Layer",
+      "description": "Provides authentication, authorization, network protection and secure communication."
+    },
+    {
+      "id": "data",
+      "name": "Data Layer",
+      "description": "Stores and manages application data."
+    },
+    {
+      "id": "messaging",
+      "name": "Messaging Layer",
+      "description": "Supports asynchronous communication and event processing."
+    },
+    {
+      "id": "infrastructure",
+      "name": "Infrastructure Layer",
+      "description": "Provides infrastructure resources for running application services."
+    },
+    {
+      "id": "monitoring",
+      "name": "Monitoring Layer",
+      "description": "Monitors application performance, availability and system health."
+    },
+    {
+      "id": "devops",
+      "name": "DevOps and Deployment Layer",
+      "description": "Supports application packaging, deployment and continuous integration."
+    }
+  ],
+  "technologies": [
+    {
+      "id": "react",
+      "name": "React",
+      "layer": "presentation",
+      "purpose": "Build interactive user interfaces."
+    },
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "layer": "presentation",
+      "purpose": "Build server-rendered and optimized web applications."
+    },
+    {
+      "id": "nodejs",
+      "name": "Node.js",
+      "layer": "application",
+      "purpose": "Build scalable backend application services."
+    },
+    {
+      "id": "fastapi",
+      "name": "FastAPI",
+      "layer": "application",
+      "purpose": "Build high-performance Python APIs."
+    },
+    {
+      "id": "springboot",
+      "name": "Spring Boot",
+      "layer": "application",
+      "purpose": "Build enterprise backend services."
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgreSQL",
+      "layer": "data",
+      "purpose": "Store transactional and relational application data."
+    },
+    {
+      "id": "mongodb",
+      "name": "MongoDB",
+      "layer": "data",
+      "purpose": "Store flexible document-oriented product and application data."
+    },
+    {
+      "id": "redis",
+      "name": "Redis",
+      "layer": "data",
+      "purpose": "Provide caching, session storage and fast data access."
+    },
+    {
+      "id": "opensearch",
+      "name": "OpenSearch",
+      "layer": "data",
+      "purpose": "Provide product search and indexing."
+    },
+    {
+      "id": "kafka",
+      "name": "Apache Kafka",
+      "layer": "messaging",
+      "purpose": "Support event streaming and asynchronous communication."
+    },
+    {
+      "id": "rabbitmq",
+      "name": "RabbitMQ",
+      "layer": "messaging",
+      "purpose": "Support message queuing and asynchronous task processing."
+    },
+    {
+      "id": "api_gateway",
+      "name": "AWS API Gateway",
+      "layer": "api",
+      "purpose": "Manage API routing, access and request handling."
+    },
+    {
+      "id": "oauth2",
+      "name": "OAuth 2.0",
+      "layer": "security",
+      "purpose": "Provide delegated authorization and secure access."
+    },
+    {
+      "id": "jwt",
+      "name": "JWT",
+      "layer": "security",
+      "purpose": "Support token-based authentication and API access."
+    },
+    {
+      "id": "rbac",
+      "name": "Role-Based Access Control",
+      "layer": "security",
+      "purpose": "Restrict application access based on user roles."
+    },
+    {
+      "id": "waf",
+      "name": "Web Application Firewall",
+      "layer": "security",
+      "purpose": "Filter malicious HTTP requests and help protect against common web attacks."
+    },
+    {
+      "id": "tls13",
+      "name": "TLS 1.3",
+      "layer": "security",
+      "purpose": "Encrypt data transmitted between application components."
+    },
+    {
+      "id": "prometheus",
+      "name": "Prometheus",
+      "layer": "monitoring",
+      "purpose": "Collect application and infrastructure metrics."
+    },
+    {
+      "id": "grafana",
+      "name": "Grafana",
+      "layer": "monitoring",
+      "purpose": "Visualize metrics and monitor application performance."
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "layer": "infrastructure",
+      "purpose": "Package applications and their dependencies into containers."
+    },
+    {
+      "id": "kubernetes",
+      "name": "Kubernetes",
+      "layer": "infrastructure",
+      "purpose": "Orchestrate and scale containerized applications."
+    },
+    {
+      "id": "github_actions",
+      "name": "GitHub Actions",
+      "layer": "devops",
+      "purpose": "Automate software build, testing and deployment workflows."
+    }
+  ],
+  "components": [
+    {
+      "id": "product_service",
+      "name": "Product Service",
+      "layer": "application",
+      "description": "Manages product information and product catalog operations.",
+      "requirements": [
+        "Product Catalog",
+        "High Traffic"
+      ]
+    },
+    {
+      "id": "search_service",
+      "name": "Search Service",
+      "layer": "application",
+      "description": "Handles product search and indexing operations.",
+      "requirements": [
+        "Product Search"
+      ]
+    },
+    {
+      "id": "cart_service",
+      "name": "Cart Service",
+      "layer": "application",
+      "description": "Manages customer shopping carts and cart sessions.",
+      "requirements": [
+        "Shopping Cart",
+        "High Traffic"
+      ]
+    },
+    {
+      "id": "order_service",
+      "name": "Order Service",
+      "layer": "application",
+      "description": "Processes customer orders and order status.",
+      "requirements": [
+        "Payment",
+        "Shopping Cart"
+      ]
+    },
+    {
+      "id": "payment_service",
+      "name": "Payment Service",
+      "layer": "application",
+      "description": "Handles payment processing and transaction communication.",
+      "requirements": [
+        "Payment",
+        "Security"
+      ]
+    }
+  ],
+  "architecture_patterns": [
+    {
+      "id": "three_tier",
+      "name": "Three-Tier Architecture",
+      "description": "Separates presentation, application and data responsibilities."
+    },
+    {
+      "id": "microservices",
+      "name": "Microservices Architecture",
+      "description": "Organizes the application into independently manageable services."
+    },
+    {
+      "id": "event_driven",
+      "name": "Event-Driven Architecture",
+      "description": "Uses events and asynchronous messaging for communication between services."
+    }
+  ],
+  "selection_rules": [
+    {
+      "id": "high_traffic_rule",
+      "condition": "High Traffic",
+      "recommendations": [
+        "Redis",
+        "Apache Kafka",
+        "Kubernetes"
+      ],
+      "reason": "Caching, asynchronous processing and orchestration can help support high traffic."
+    },
+    {
+      "id": "product_search_rule",
+      "condition": "Product Search",
+      "recommendations": [
+        "OpenSearch"
+      ],
+      "reason": "A search engine supports indexing and efficient product searches."
+    },
+    {
+      "id": "product_catalog_rule",
+      "condition": "Product Catalog",
+      "recommendations": [
+        "PostgreSQL",
+        "MongoDB"
+      ],
+      "reason": "Relational and document-oriented databases can support different product data requirements."
+    },
+    {
+      "id": "shopping_cart_rule",
+      "condition": "Shopping Cart",
+      "recommendations": [
+        "Redis",
+        "PostgreSQL"
+      ],
+      "reason": "Redis can support fast cart access while PostgreSQL can persist transactional information."
+    },
+    {
+      "id": "payment_rule",
+      "condition": "Payment",
+      "recommendations": [
+        "PostgreSQL",
+        "OAuth 2.0",
+        "TLS 1.3"
+      ],
+      "reason": "Payment workflows require transactional data handling and secure communication."
+    },
+    {
+      "id": "security_rule",
+      "condition": "Security",
+      "recommendations": [
+        "Web Application Firewall",
+        "OAuth 2.0",
+        "JWT",
+        "Role-Based Access Control",
+        "TLS 1.3"
+      ],
+      "reason": "Security controls help protect application access, communication and web traffic."
+    }
+  ],
+  "security_requirements": [
+    {
+      "id": "web_attack_protection",
+      "name": "Web Attack Protection",
+      "description": "Protect the application from common web attacks such as SQL injection and cross-site scripting.",
+      "keywords": [
+        "sql injection",
+        "xss",
+        "cross-site scripting",
+        "web attack",
+        "malicious request",
+        "web protection"
+      ],
+      "control_ids": [
+        "waf"
+      ]
+    },
+    {
+      "id": "network_protection",
+      "name": "Network Protection",
+      "description": "Protect application infrastructure and network boundaries from unauthorized traffic and attacks.",
+      "keywords": [
+        "network security",
+        "network protection",
+        "firewall",
+        "ddos",
+        "denial of service",
+        "network attack"
+      ],
+      "control_ids": [
+        "network_firewall",
+        "ddos_protection",
+        "network_segmentation"
+      ]
+    },
+    {
+      "id": "identity_access",
+      "name": "Identity and Access Management",
+      "description": "Authenticate users and control access to application resources.",
+      "keywords": [
+        "authentication",
+        "authorization",
+        "user login",
+        "identity",
+        "access control",
+        "role-based access",
+        "secure login"
+      ],
+      "control_ids": [
+        "oauth2",
+        "jwt",
+        "rbac"
+      ]
+    },
+    {
+      "id": "secure_communication",
+      "name": "Secure Communication",
+      "description": "Protect data while it is transmitted between users, APIs and services.",
+      "keywords": [
+        "secure communication",
+        "encrypted communication",
+        "data in transit",
+        "https",
+        "transport security",
+        "secure connection"
+      ],
+      "control_ids": [
+        "tls13"
+      ]
+    },
+    {
+      "id": "data_protection",
+      "name": "Data Protection",
+      "description": "Protect sensitive and stored application data from unauthorized access.",
+      "keywords": [
+        "data protection",
+        "sensitive data",
+        "data encryption",
+        "encryption at rest",
+        "database security",
+        "protect customer data"
+      ],
+      "control_ids": [
+        "encryption_at_rest",
+        "rbac"
+      ]
+    },
+    {
+      "id": "security_event_monitoring",
+      "name": "Security Event Monitoring",
+      "description": "Monitor suspicious activities, security events and possible intrusions.",
+      "keywords": [
+        "security monitoring",
+        "intrusion detection",
+        "suspicious activity",
+        "security logs",
+        "audit logs",
+        "threat detection"
+      ],
+      "control_ids": [
+        "ids_ips",
+        "security_monitoring_logs"
+      ]
+    }
+  ],
+  "security_controls": [
+    {
+      "id": "waf",
+      "name": "Web Application Firewall",
+      "category": "Application Security",
+      "purpose": "Filters HTTP and HTTPS traffic to help protect web applications against common attacks.",
+      "technology": "WAF"
+    },
+    {
+      "id": "network_firewall",
+      "name": "Network Firewall",
+      "category": "Network Security",
+      "purpose": "Controls incoming and outgoing network traffic according to configured security rules.",
+      "technology": "Network Firewall"
+    },
+    {
+      "id": "ddos_protection",
+      "name": "DDoS Protection",
+      "category": "Network Security",
+      "purpose": "Helps detect and mitigate distributed denial-of-service attacks.",
+      "technology": "DDoS Protection Service"
+    },
+    {
+      "id": "network_segmentation",
+      "name": "Network Segmentation",
+      "category": "Network Security",
+      "purpose": "Separates application, service and database network zones to limit unauthorized access.",
+      "technology": "Network Segmentation"
+    },
+    {
+      "id": "oauth2",
+      "name": "OAuth 2.0",
+      "category": "Identity and Access Management",
+      "purpose": "Provides delegated authorization for secure application access.",
+      "technology": "OAuth 2.0"
+    },
+    {
+      "id": "jwt",
+      "name": "JSON Web Token",
+      "category": "Identity and Access Management",
+      "purpose": "Carries signed claims that can be used to support token-based authentication and authorization.",
+      "technology": "JWT"
+    },
+    {
+      "id": "rbac",
+      "name": "Role-Based Access Control",
+      "category": "Identity and Access Management",
+      "purpose": "Restricts access to resources based on assigned user roles and permissions.",
+      "technology": "RBAC"
+    },
+    {
+      "id": "tls13",
+      "name": "TLS 1.3",
+      "category": "Communication Security",
+      "purpose": "Protects data in transit through encrypted communication.",
+      "technology": "TLS 1.3"
+    },
+    {
+      "id": "encryption_at_rest",
+      "name": "Encryption at Rest",
+      "category": "Data Security",
+      "purpose": "Protects stored data through encryption and appropriate key management.",
+      "technology": "Database and Storage Encryption"
+    },
+    {
+      "id": "ids_ips",
+      "name": "Intrusion Detection and Prevention System",
+      "category": "Threat Detection",
+      "purpose": "Detects suspicious network activity and can help prevent identified malicious traffic.",
+      "technology": "IDS/IPS"
+    },
+    {
+      "id": "security_monitoring_logs",
+      "name": "Security Monitoring and Audit Logs",
+      "category": "Security Monitoring",
+      "purpose": "Records and monitors security-relevant events to support detection and investigation.",
+      "technology": "Security Monitoring and Audit Logging"
+    }
+  ],
+  "status": "starter-curated-dataset",
+  "version": "0.3"
+}
